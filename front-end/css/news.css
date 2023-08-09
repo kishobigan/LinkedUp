@@ -1,0 +1,942 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,700;1,800&display=swap');
+
+:root{
+    --priimary-color-hue: 32.94;
+    --dark-color-lightness: 17%;
+    --light-color-lightness: 95%;
+    --white-color-lightness: 100%;
+
+    --color-dark : hsl(252,30%,var(--dark-color-lightness));
+    --color-white: hsl(252,30%,var(--white-color-lightness));
+    --color-light: hsl(252,30%,var(--light-color-lightness));
+    --color-gray : hsl(252,15%,65%);
+    --color-priimary: hsl(var(--priimary-color-hue),75%,60%);
+    --color-secondary: hsl(252,100%,90%);
+    --color-success: hsl(120,95%,65%);
+    --color-danger: hsl(0,95%,65%);
+    --color-black: hsl(252,30%,10%);
+
+    --boder-radius: 2rem;
+    --card-boder-radius: 1rem;
+    --btn-padding: 0.6rem 2rem;
+    --search-padding: 0.6rem 1rem;
+    --card-padding : 1rem;
+
+    --sticky-top-left : 5.4rem;
+    --sticky-top-right: -18rem;
+}
+
+*, *::backdrop, ::after{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+     font-family:  "Poppins" , sans-serif;
+     color: var(--color-dark);
+     background: var(--color-light);
+     overflow-x: hidden;
+}
+
+/*=========== Genaral styles ===========================*/
+a{
+    color: var(--color-dark);
+    text-decoration: none;
+}
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.logo img{
+    display: block;
+    width: 10rem;
+    height: 8rem;
+    position: relative;
+    left: -8rem;
+}
+
+.profle-picture{
+    width: 2.7rem;
+    aspect-ratio: 1/1;
+    /*border-radius: 50%;*/
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+    overflow: hidden;
+}
+
+.profle-picture img{
+    display: block;
+    width: 100%;
+}
+
+.btn{
+    display: inline-block;
+    padding: var(--btn-padding);
+    font-weight: 500;
+    border-radius: var(--boder-radius);
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 0.9rem;
+}
+
+.btn:hover{
+    opacity: 0.8;
+}
+
+.btn-primary{
+    background: var(--color-priimary);
+    color: #fff;
+}
+
+.text-bold{
+    font-weight: 500;
+}
+
+.text-muted{
+    color: var(--color-gray);
+}
+
+/*=========== Navigation bar ===========================*/
+nav{
+    width: 100%;
+    background: var(--color-white);
+    padding: 0.7rem;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+nav .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.searchBar{
+    background: var(--color-light);
+    border-radius: var(--boder-radius);
+    padding: var(--search-padding);
+    position: relative;
+    left: -3rem;
+}
+
+.searchBar input[type = "search"]{
+    background: transparent;
+    border: 0;
+    width: 35vw;
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: var(--color-dark);
+}
+
+.searchBar input[type = "search"]::placeholder{
+    color: var(--color-gray);
+}
+
+nav .create{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+/*=========== main ===========================*/
+main{
+    position: relative;
+    top: 11rem;
+    left: 2rem;
+}
+
+main #container{
+    display: grid;
+    grid-template-columns: 18vw auto 27vw;
+    column-gap: 2rem;
+    position: relative;
+}
+
+/*=========== left ===========================*/
+main #container .left{
+    height: fit-content;
+    position: sticky;
+    top: var(--sticky-top-left);
+}
+
+.profile{
+    padding: var(--card-padding);
+    background: var(--color-white);
+    border-radius: var(--card-boder-radius);
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    width: 100%;
+}
+
+/*--------------SIDE BAR ----------------------*/
+.left .sidebar{
+    margin-top: 1rem;
+    background: var(--color-white);
+    border-radius: var(--card-boder-radius);
+}
+
+.left .sidebar .menu-item{
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    cursor: pointer;
+    transition: all 300ms ease;
+    position: relative;
+}
+
+.left .sidebar .menu-item:hover{
+    background: var(--color-light);
+}
+
+.left .sidebar span{
+    font-size: 1.4rem;
+    color: var(--color-gray);
+    margin-left: 2rem;
+    position: relative;
+}
+
+.left .sidebar .menu-item .notification-counnt{
+    background: var(--color-danger);
+    color: #fff;
+    font-size: 0.7rem;
+    border-radius: 0.8rem;
+    padding: 0.1rem 0.4rem;
+    position: absolute;
+    top: 1rem;
+    left: 2.5rem;
+}
+
+.left .sidebar h3{
+    margin-left: 1.5rem;
+    font-size: 1rem;
+}
+
+.left .sidebar .active{
+    background: var(--color-light);
+}
+
+.left .sidebar .active span,.left .sidebar .active h3{
+    color: var(--color-priimary);
+
+}
+
+.left .sidebar .active::before{
+    content: "";
+    display: block;
+    width: 0.5rem;
+    height: 100%;
+    position: absolute;
+    background: var(--color-priimary);
+}
+
+.left .sidebar .menu-item:first-child.active{
+    border-top-left-radius: var(--card-boder-radius);
+    overflow: hidden;
+}
+
+.left .sidebar .menu-item:last-child.active{
+    border-bottom-left-radius: var(--card-boder-radius);
+    overflow: hidden;
+}
+
+.left .btn{
+    margin-top: 1rem;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    border: 0;
+}
+
+/*--------- notifiication popup ----------*/
+.left .notfication-popup{
+    position: absolute;
+    top: 0;
+    left: 110%;
+    width: 30rem;
+    background: var(--color-white);
+    border-radius: var(--card-boder-radius);
+    padding: var(--card-padding);
+    box-shadow: 0 0 2rem hsl(var(--color-priimary),75%,60% 25%);
+    z-index: 8;
+    display: none;
+}
+
+.left .notfication-popup::before{
+    content: "";
+    width: 1.2rem;
+    height: 1.3rem;
+    display: block;
+    background: var(--color-white);
+    position: absolute;
+    left: -0.6rem;
+    transform: rotate(45deg);
+}
+
+.left .notfication-popup > div{
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.left .notfication-popup small{
+    display: block;
+}
+
+/*=========== MIIDDLE ===========================*/
+/*--------- Stories ----------*/
+.middle .stories{
+    display: flex;
+    justify-content: space-between;
+    height: 18rem;
+    gap: 0.5rem;
+}
+
+.middle .stories .story{
+    padding: var(--card-padding);
+    border-radius: var(--card-boder-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 0.75rem;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.middle .stories .story::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 5rem;
+    background: linear-gradient(transparent,rgba(0,0,0, 0.75));
+    position: absolute;
+    bottom: 0;
+}
+
+.middle .stories .story .name{
+    z-index: 2;
+}
+
+.middle .stories .story:nth-child(1){
+    background: url("../use_photo/n1.JPG") no-repeat center center/cover;
+}
+
+.middle .stories .story:nth-child(2){
+    background: url("../use_photo/n2.JPG") no-repeat center center/cover;
+}
+
+.middle .stories .story:nth-child(3){
+    background: url("../use_photo/n10.JPG") no-repeat center center/cover;
+}
+
+.middle .stories .story:nth-child(4){
+    background: url("../use_photo/n6.JPG") no-repeat center center/cover;
+}
+
+.middle .stories .story:nth-child(5){
+    background: url("../use_photo/n9.JPG") no-repeat center center/cover;
+}
+
+.middle .stories .story:nth-child(6){
+    background: url("../use_photo/n8.JPG") no-repeat center center/cover;
+}
+
+.middle .stories .story .profle-picture{
+    width: 2rem;
+    height: 2rem;
+    align-self: start;
+    border: 3px solid var(--color-priimary);
+}
+
+/*--------- Create Post ----------*/
+.middle .create-post{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    background: var(--color-white);
+    padding: 0.4rem var(--card-padding);
+    border-radius: var(--boder-radius);
+}
+
+.middle .create-post input[type="text"]{
+    justify-self: start;
+    width: 100%;
+    padding-left: 1rem;
+    background: transparent;
+    color: var(--color-dark);
+    margin-right: 1rem;
+    border: 0;
+}
+
+.middle .create-post .btn{
+    border: 0;
+}
+
+/*--------- Feeds ----------*/
+.middle .feeds .feed{
+    background: var(--color-white);
+    border-radius: var(--card-boder-radius);
+    padding: var(--card-padding);
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.middle .feed .head{
+    display: flex;
+    justify-content: space-between;
+}
+
+.middle .feed .user{
+    display: flex;
+    gap: 1rem;
+}
+
+.photo img{
+    width: 100%;
+}
+
+.middle .feed .photo{
+    border-radius: var(--card-boder-radius);
+    overflow: hidden;
+    margin: 0.7rem 0;
+}
+
+.middle .feed .action-buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    margin: 0.6rem;
+}
+
+.middle .liked-by{
+    display: flex;
+}
+
+.middle .liked-by span{
+    width: 1.4rem;
+    height: 1.4rem;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--color-white);
+    margin-right: -0.6rem;
+}
+
+.middle .liked-by span:first-child{
+    margin: 0;
+}
+
+.middle .liked-by p{
+    margin-left: 0.5rem;
+}
+
+/*=========== RIGHT ===========================*/
+main .container .right{
+    height: max-content;
+    position: sticky;
+    top: var(--sticky-top-right);
+    bottom: 0;
+}
+/*-------------- messages ------------*/
+.right .messages{
+    width: 25vw;
+    background: var(--color-white);
+    border-radius: var(--card-boder-radius);
+    padding: var(--card-padding);
+    box-shadow: none;
+}
+.right .messages .heading{
+    background: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.right .messages span{
+    font-size: 1.4rem;
+}
+
+.right .messages .searchBar{
+    display: flex;
+    margin-bottom: 1rem;
+    position: relative;
+    left: 0.3rem;
+}
+.right .messages .category{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.right .messages .category h6{
+    width: 100%;
+    text-align: center;
+    border-bottom: 4px solid var(--color-light);
+    padding-bottom: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.right .messages .category .active{
+    border-color: var(--color-dark);
+}
+
+.right .messages .message-requests{
+    color: var(--color-priimary);
+}
+
+.right .messages .message {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    align-items: start;
+}
+
+.right .messages .message .profle-picture{
+    position: relative;
+    overflow: visible;
+}
+
+.right .profle-picture img{
+    border-radius: 50%;
+}
+
+.right .messages .message:last-child{
+    margin: 0;
+}
+
+.right .messages .message p{
+    font-size: 0.8rem;
+}
+
+.right .messages .message .profle-picture .active{
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+    background: var(--color-success);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+/*-------------- friiend request ------------*/
+.right .friend-requests{
+    margin-top: 1rem;
+    width: 25vw;
+}
+
+.right .friend-requests h4{
+    color: var(--color-gray);
+    margin: 1rem 0;
+}
+
+.right .request{
+    background: var(--color-white);
+    padding: var(--card-padding);
+    border-radius: var(--card-boder-radius);
+    margin-bottom: 0.7rem;
+}
+
+.right .request .info{
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.right .request .btn{
+    border: 0;
+}
+
+/*=========== THEME COSTOMIZATION ===========================*/
+.custermize-theme{
+    background: rgba(255, 255, 255, 0.3);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    font-size: 0.9rem;
+    display: none;
+}
+.close{
+    color: var(--color-priimary);
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.custermize-theme .card{
+    background: var(--color-white);
+    padding: 3rem;
+    border-radius: var(--card-boder-radius);
+    width: 50%;
+    box-shadow: 0 0 1rem var(--color-priimary);
+}
+/*-------------- font size ------------*/
+.custermize-theme .font-size{
+    margin-top: 5rem;
+}
+
+.custermize-theme .font-size > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-light);
+    padding: var(--search-padding);
+    border-radius: var(--card-boder-radius);
+}
+
+.custermize-theme .choose-size{
+    background: var(--color-secondary);
+    height: 0.3rem;
+    width: 100%;
+    margin: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custermize-theme .choose-size span{
+    width: 1rem;
+    height: 1rem;
+    background: var(--color-secondary);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.custermize-theme .choose-size span.active{
+    background: var(--color-priimary);
+}
+/*-------------- primary color ------------*/
+.custermize-theme .color{
+    margin-top: 2rem;
+}
+
+.custermize-theme .choose-color{
+    background: var(--color-light);
+    padding: var(--search-padding);
+    border-radius: var(--card-boder-radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.custermize-theme .choose-color span{
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+}
+
+.custermize-theme .choose-color span:nth-child(1){
+    background: hsl(0, 100%, 47%);
+}
+.custermize-theme .choose-color span:nth-child(2){
+    background: hsl(20, 100%, 50%);
+}
+.custermize-theme .choose-color span:nth-child(3){
+    background: hsl(32.94, 100%, 50%);
+}
+.custermize-theme .choose-color span:nth-child(4){
+    background: hsl(49, 100%, 57%);
+}
+.custermize-theme .choose-color span:nth-child(5){
+    background: hsl(59, 100%, 50%);
+}
+
+.custermize-theme .choose-color span.active{
+    border: 5px solid #ffffff;
+}
+/*-------------- back ground ------------*/
+.custermize-theme .background{
+    margin-top: 2rem;
+}
+
+.custermize-theme .choose-bg-color{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.custermize-theme .choose-bg-color > div{
+    padding: var(--card-padding);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.4rem;
+    cursor: pointer;
+}
+
+.custermize-theme .choose-bg-color > div.active{
+    border: 2px solid var(--color-priimary);
+}
+
+.custermize-theme .choose-bg-color .bg-color-1{
+    background: hsl(0, 0%, 100%);
+    color: #000;
+}
+.custermize-theme .choose-bg-color .bg-color-2{
+    background: hsl(252, 9%, 21%);
+    color: #fff;
+}
+.custermize-theme .choose-bg-color .bg-color-3{
+    background: hsl(0, 0%, 0%);
+    color: #fff;
+}
+
+.custermize-theme .choose-bg-color > div span{
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid var(--color-priimary);
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+/*start from here Nimantha's css*/
+.banner{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+.slider{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+}
+#slideImg{
+    width: 450px;
+    height: 285px;
+    float: right;
+    margin-top: 0px;
+    border: 2px black solid;
+    cursor: pointer;
+}
+
+.right_side{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 10%;
+}
+
+.right_side .news-side{
+    display: flex;
+    flex-direction: column;
+}
+
+.right_side .news-side .news-link a{
+    width: 100%;
+}
+
+.right_side .news-side .news-photo img{
+    width: 20rem;
+    height: 20rem;
+}
+
+.first a{
+    float: right;
+}
+.first a{
+    position: absolute;
+    right: 10px;
+    top: 370px;
+    left: 1130px;
+    text-decoration: underline;
+
+}
+.first img{
+    width: 380px;
+    height: 270px;
+    margin-left: 1100px;
+    position: absolute;
+    left: 0;
+    top: 450px;
+
+}
+.second a{
+    position: absolute;
+    right: 10px;
+    top: 770px;
+    left: 1140px;
+    text-decoration: underline;
+
+}
+.second img{
+    width: 380px;
+    height: 270px;
+    margin-left: 1100px;
+    position: absolute;
+    left: 0;
+    top: 830px;
+
+}
+.third a{
+    position: absolute;
+    right: 10px;
+    top: 1160px;
+    left: 1110px;
+    text-decoration: underline;
+
+}
+.third img{
+    width: 380px;
+    height: 270px;
+    margin-left: 1100px;
+    position: absolute;
+    left: 0;
+    top: 1196px;
+
+}
+.fourth a{
+    position: absolute;
+    right: 10px;
+    top: 1520px;
+    left: 1100px;
+    text-decoration: underline;
+
+}
+.fourth img{
+    width: 380px;
+    height: 270px;
+    margin-left: 1100px;
+    position: absolute;
+    left: 0;
+    top: 1585px;
+
+}
+.fifth a{
+    position: absolute;
+    right: 10px;
+    top: 1915px;
+    left: 1100px;
+    text-decoration: underline;
+
+}
+.fifth img{
+    width: 380px;
+    height: 270px;
+    margin-left: 1100px;
+    position: absolute;
+    left: 0;
+    top: 1955px;
+
+}
+.navbar ul{
+    background-color: var(--color-priimary);
+    overflow: hidden;
+    border-radius: 5px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+.navbar li{
+    display: inline-block;
+    color: white;
+    font-weight: 5px;
+    text-decoration: none;
+    padding: 15px 41.5px;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.navbar li:hover{
+    background-color: #a64dff;
+}
+
+/* ================ Responsive media query =============== */
+@media screen and (max-width: 1200px){
+    .container{
+        width: 75%;
+    }
+    #container{
+        width: 96%;
+    }
+
+    main #container{
+        grid-template-columns: 5rem auto 30vw;
+        gap: 1rem;
+    }
+
+    .left{
+        width: 5rem;
+        z-index: 5;
+    }
+
+    main #container .left .profile{
+        display: none;
+    }
+
+    .sidebar h3{
+        display: none;
+    }
+
+    .left .btn{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    nav .searchBar{
+        display: none;
+    }
+
+    main #container{
+        grid-template-columns: 0 auto 5rem;
+        gap: 0;
+    }
+
+    main #container .left{
+        grid-column: 3/4;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        top: 10rem;
+    }
+
+    /* ------- notificaton popup ------------- */
+    .left .notfication-popup{
+        position: absolute;
+        left: -20rem;
+        width: 20rem;
+    }
+
+    .left .notfication-popup::before{
+        display: absolute;
+        top: 1.3rem;
+        left: calc(20rem - 0.6rem);
+        display: block;
+    }
+
+    main #container .middle{
+        grid-column: 1/3;
+    }
+
+    main #container .right{
+        display: none;
+    }
+}
